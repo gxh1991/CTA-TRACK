@@ -8,6 +8,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -26,18 +27,23 @@ import android.util.Xml;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 public class BusFragment extends Fragment{
 	
 	private Intent busIntent;
-	
+	private Map<String,String> map;
+	private List<Map<String,String>> list;
+	private ListView lv;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		busIntent = new Intent();
 		String url = "http://www.ctabustracker.com/bustime/api/v1/getroutes?" + ConnectAPI.BusKey;
-		
+		lv = (ListView)getActivity().findViewById(R.id.MyListView2);
+		new DownloadBusList().execute(url);
 	}
 
 	@Override
@@ -68,14 +74,34 @@ public class BusFragment extends Fragment{
 			while(event != XmlPullParser.END_DOCUMENT) {
 				switch(event) {
 				case XmlPullParser.START_DOCUMENT:
-					
+					map = new HashMap<String,String>();
+					list = new ArrayList<Map<String,String>>();
+					break;
+				case XmlPullParser.START_TAG:
+					String name = parser.getName();
+					if(name.equals("rt")) {
+						event = parser.next();
+						map.put("rt", parser.getText());
+					} else if(name.equals("rtnm")) {
+						event = parser.next();
+						map.put("rtnm", parser.getText());
+						list.add(new HashMap<String,String>(map));
+					}
+					break;
 				}
+				event = parser.next();
 				}
 			
+			}catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}catch (XmlPullParserException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			lv.setAdapter(new SimpleAdapter(getActivity(), list, R.layout.bus_fragment_listview, 
+					new String[] {"route","stpnm"}, new int[] {R.id.busRt,R.id.busRtnm}));
+		
 		}
 		
 		

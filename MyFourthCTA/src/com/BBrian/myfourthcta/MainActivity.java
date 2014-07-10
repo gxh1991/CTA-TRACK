@@ -22,9 +22,14 @@ public class MainActivity extends Activity {
 		actionBar.setDisplayShowHomeEnabled(false);  
 		actionBar.setDisplayShowTitleEnabled(false);
 		
-		Tab tab = actionBar.newTab().setText("Favorite").
+		Tab tab = actionBar.newTab().setText("Train").
 				setTabListener(new MyTabListener<TrainFragment>("Train",TrainFragment.class));
 		actionBar.addTab(tab);
+		
+		Tab tab2 = actionBar.newTab().setText("Bus").setTabListener(new
+				 MyTabListener<BusFragment>("Bus", BusFragment.class));
+		actionBar.addTab(tab2);
+				
 	}
 	
 	
