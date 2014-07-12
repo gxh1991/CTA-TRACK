@@ -45,7 +45,7 @@ public class ConnectAPI {
 			String line;
 			while((line = br.readLine()) != null) {
 				builder.append(line);
-				Log.v("out", line);
+//				Log.v("out", line);
 			}
 			return builder.toString();
 		} catch (MalformedURLException e) {

@@ -65,9 +65,9 @@ public class MainActivity extends Activity {
 		@Override
 		public void onTabReselected(Tab tab, FragmentTransaction ft) {
 			// TODO Auto-generated method stub
-//			if(mFragment != null) {
-//				ft.detach(mFragment);
-//			}
+			if(mFragment != null) {
+				ft.detach(mFragment);
+			}
 		}
 		
 	}

@@ -8,6 +8,11 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="19" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -21,6 +26,18 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.BBrian.myfourthcta.DirectionActivity"
+            android:label="@string/title_activity_direction" >
+        </activity>
+        <activity
+            android:name="com.BBrian.myfourthcta.StopsActivity"
+            android:label="@string/title_activity_stops" >
+        </activity>
+        <activity
+            android:name="com.BBrian.myfourthcta.PredictionActivity"
+            android:label="@string/title_activity_prediction" >
         </activity>
     </application>
 
