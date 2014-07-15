@@ -8,25 +8,43 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class TrainStops extends ListActivity {
 	private Intent intent;
+	private Intent preIntent;
 	List<String> list;
+	String line;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		intent = getIntent();
-		String line = intent.getStringExtra("line");
+		line = intent.getStringExtra("line");
 		String[] stops = getTrainStops(line);
 		list = new ArrayList<String>(Arrays.asList(stops));
 		getListView().setBackgroundColor(Color.parseColor("#E9EBEA"));
 		setListAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1
 				,list));
-		
+		preIntent = new Intent();
+		preIntent.setClass(this, TrainPredictionActivity.class);
+		preIntent.putExtra("line", line);
 	}
 	
 	
+	
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		// TODO Auto-generated method stub
+		super.onListItemClick(l, v, position, id);
+		String stpnm = list.get(position);
+		preIntent.putExtra("stpnm", stpnm);
+		
+	}
+
+
+
 	public String[] getTrainStops(String line) {
 		String[] blue = {"O'Hare", "Rosemont", "Cumberland", "Harlem (O'Hare)", "Jefferson Park", 
 				"Montrose", "Irving Park", "Addison", "Belmont", "Logan Square", 
