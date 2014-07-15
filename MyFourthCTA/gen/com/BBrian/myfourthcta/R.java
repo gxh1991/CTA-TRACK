@@ -27,7 +27,7 @@ public final class R {
     public static final class id {
         public static final int MyListView1=0x7f080004;
         public static final int MyListView2=0x7f080003;
-        public static final int action_settings=0x7f08000e;
+        public static final int action_settings=0x7f08000f;
         public static final int busRt=0x7f080001;
         public static final int busRtnm=0x7f080002;
         public static final int favorite_button=0x7f080008;
@@ -35,6 +35,7 @@ public final class R {
         public static final int list1routename=0x7f080007;
         public static final int pager=0x7f080000;
         public static final int section_label=0x7f080005;
+        public static final int stopText=0x7f08000e;
         public static final int testtext=0x7f08000c;
         public static final int textView1=0x7f080009;
         public static final int textView2=0x7f08000a;
@@ -43,16 +44,18 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int bus_first_fragment=0x7f030001;
-        public static final int bus_fragment_listview=0x7f030002;
-        public static final int buslist_frament=0x7f030003;
-        public static final int firstfragment=0x7f030004;
-        public static final int fragment_main=0x7f030005;
-        public static final int listview1_layout=0x7f030006;
-        public static final int listview_2_layout=0x7f030007;
-        public static final int prediction_activity=0x7f030008;
-        public static final int test=0x7f030009;
-        public static final int train_listview=0x7f03000a;
+        public static final int activity_train_prediction=0x7f030001;
+        public static final int bus_first_fragment=0x7f030002;
+        public static final int bus_fragment_listview=0x7f030003;
+        public static final int buslist_frament=0x7f030004;
+        public static final int firstfragment=0x7f030005;
+        public static final int fragment_main=0x7f030006;
+        public static final int listview1_layout=0x7f030007;
+        public static final int listview_2_layout=0x7f030008;
+        public static final int prediction_activity=0x7f030009;
+        public static final int test=0x7f03000a;
+        public static final int train_listview=0x7f03000b;
+        public static final int trainstops_listview=0x7f03000c;
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -64,6 +67,8 @@ public final class R {
         public static final int title_activity_direction=0x7f050005;
         public static final int title_activity_prediction=0x7f050008;
         public static final int title_activity_stops=0x7f050007;
+        public static final int title_activity_train_prediction=0x7f05000a;
+        public static final int title_activity_train_stops=0x7f050009;
         public static final int title_section1=0x7f050001;
         public static final int title_section2=0x7f050002;
         public static final int title_section3=0x7f050003;

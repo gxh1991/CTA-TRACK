@@ -3,22 +3,27 @@ package com.BBrian.myfourthcta;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.BBrian.myfourthcta.BusFragment.MyItemClickListener;
+
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.LayoutInflater.Filter;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 public class TrainFragment extends Fragment {
 	private List<String> list;
+	private Intent trainIntent;
+	private ListView lv;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -41,7 +46,7 @@ public class TrainFragment extends Fragment {
 		// TODO Auto-generated method stub
 		View v = inflater.inflate(R.layout.firstfragment, container,false);
 		v.setBackgroundColor(Color.parseColor("#4C4D45"));
-		ListView lv =(ListView) v.findViewById(R.id.MyListView1);
+		lv =(ListView) v.findViewById(R.id.MyListView1);
 		
 		//lv.setBackgroundColor(Color.parseColor("#2CB3E1"));
 		lv.setAdapter(new Myadapter(list, getActivity()));
@@ -49,6 +54,30 @@ public class TrainFragment extends Fragment {
 		
 	}
 	
+	
+	
+	@Override
+	public void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+		trainIntent = new Intent();
+		trainIntent.setClass(getActivity(), TrainStops.class);
+		
+		lv.setOnItemClickListener(new MyItemClickListener());
+		
+	}
+	class MyItemClickListener implements OnItemClickListener {
+
+		@Override
+		public void onItemClick(AdapterView<?> l, View v, int postion,long id) {
+			String line = list.get(postion);
+			trainIntent.putExtra("line", line);
+			startActivity(trainIntent);
+		}
+		
+	}
+
+
 	class Myadapter extends BaseAdapter {
 		List<String> trains;
 		List<String> org;

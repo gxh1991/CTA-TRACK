@@ -10,5 +10,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_stops">StopsActivity</string>
     <string name="title_activity_prediction">PredictionActivity</string>
+    <string name="title_activity_train_stops">TrainStops</string>
+    <string name="title_activity_train_prediction">TrainPredictionActivity</string>
 
 </resources>

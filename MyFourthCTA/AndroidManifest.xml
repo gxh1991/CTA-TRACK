@@ -39,6 +39,14 @@
             android:name="com.BBrian.myfourthcta.PredictionActivity"
             android:label="@string/title_activity_prediction" >
         </activity>
+        <activity
+            android:name="com.BBrian.myfourthcta.TrainStops"
+            android:label="@string/title_activity_train_stops" >
+        </activity>
+        <activity
+            android:name="com.BBrian.myfourthcta.TrainPredictionActivity"
+            android:label="@string/title_activity_train_prediction" >
+        </activity>
     </application>
 
 </manifest>
