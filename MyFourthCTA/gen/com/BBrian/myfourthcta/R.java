@@ -27,7 +27,10 @@ public final class R {
     public static final class id {
         public static final int MyListView1=0x7f080005;
         public static final int MyListView2=0x7f080004;
-        public static final int action_settings=0x7f080010;
+        public static final int TptextView1=0x7f08000e;
+        public static final int TptextView2=0x7f08000f;
+        public static final int TptextView3=0x7f080010;
+        public static final int action_settings=0x7f080013;
         public static final int busRt=0x7f080002;
         public static final int busRtnm=0x7f080003;
         public static final int favorite_button=0x7f080009;
@@ -35,13 +38,13 @@ public final class R {
         public static final int list1routename=0x7f080008;
         public static final int pager=0x7f080000;
         public static final int section_label=0x7f080006;
-        public static final int stopText=0x7f08000f;
+        public static final int stopText=0x7f080012;
         public static final int testtext=0x7f08000d;
         public static final int textView1=0x7f08000a;
         public static final int textView2=0x7f08000b;
         public static final int textView3=0x7f08000c;
-        public static final int tptext1=0x7f080001;
-        public static final int traincolor=0x7f08000e;
+        public static final int tpListview1=0x7f080001;
+        public static final int traincolor=0x7f080011;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -55,8 +58,9 @@ public final class R {
         public static final int listview_2_layout=0x7f030008;
         public static final int prediction_activity=0x7f030009;
         public static final int test=0x7f03000a;
-        public static final int train_listview=0x7f03000b;
-        public static final int trainstops_listview=0x7f03000c;
+        public static final int tp_listview=0x7f03000b;
+        public static final int train_listview=0x7f03000c;
+        public static final int trainstops_listview=0x7f03000d;
     }
     public static final class menu {
         public static final int main=0x7f070000;

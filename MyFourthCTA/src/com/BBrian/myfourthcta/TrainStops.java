@@ -40,6 +40,7 @@ public class TrainStops extends ListActivity {
 		super.onListItemClick(l, v, position, id);
 		String stpnm = list.get(position);
 		preIntent.putExtra("stpnm", stpnm);
+		startActivity(preIntent);
 		
 	}
 
